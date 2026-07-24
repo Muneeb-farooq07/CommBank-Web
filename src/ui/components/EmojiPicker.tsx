@@ -1,4 +1,4 @@
-import { BaseEmoji, Picker } from 'emoji-mart'
+import { BaseEmoji, Picker } from 'emoji-mart'// @ts-ignore
 import 'emoji-mart/css/emoji-mart.css'
 import { useAppSelector } from '../../store/hooks'
 import { selectMode } from '../../store/themeSlice'
@@ -13,7 +13,7 @@ export default function EmojiPicker(props: Props) {
       theme={theme}
       showPreview={false}
       showSkinTones={false}
-      onClick={props.onClick}
+      onSelect={(emoji: BaseEmoji) => props.onClick(emoji, {} as any)}
       color="primary"
     />
   )
